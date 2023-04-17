@@ -89,15 +89,18 @@ class AdaptiveCards extends StatelessWidget {
         final width = constraints.maxWidth;
         final crossAxisCount = (width / itemSize.width).floor();
         final childAspectRatio = width / (crossAxisCount * itemSize.width);
-        return GridView.count(
-          padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
-          crossAxisCount: crossAxisCount,
-          crossAxisSpacing: 32,
-          mainAxisSpacing: 32,
-          childAspectRatio: childAspectRatio,
-          children: [
-            for (final card in cards) SizedBox(width: cardWidth, child: card),
-          ],
+        return SizedBox(
+          width: width,
+          child: GridView.count(
+            padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
+            crossAxisCount: crossAxisCount,
+            crossAxisSpacing: 32,
+            mainAxisSpacing: 32,
+            childAspectRatio: childAspectRatio,
+            children: [
+              for (final card in cards) SizedBox(width: cardWidth, child: card),
+            ],
+          ),
         );
       },
     );

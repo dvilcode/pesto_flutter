@@ -26,13 +26,13 @@ class Pesto extends StatefulWidget {
 
 class _PestoState extends State<Pesto> {
   late final router = buildRouter();
-  final theme = BasilTheme();
+  // final theme = BasilTheme();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Pesto',
-      theme: theme.toThemeData(),
+      // theme: theme.toThemeData(),
       routerDelegate: router.routerDelegate,
       routeInformationParser: router.routeInformationParser,
       routeInformationProvider: router.routeInformationProvider,
